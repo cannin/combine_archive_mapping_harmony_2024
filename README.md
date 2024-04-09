@@ -47,17 +47,6 @@ https://github.com/sbmlteam/deviser to define new libSBML extension
 ## Example Mapping Schema using JSON
 NOTE: filetypes are defined in the manifest. JSON used for demo purposes only
 ```
-{
-    "mapping": [
-        {
-            "format1_ID": "GLCi",
-            "format2_ID": "glyph0",
-            "filename1": "./BIOMDxyz.xml",
-            "filename2": "./glycolysis.sbgn"
-        }
-            ]
-}
-
 {[
     "filename1": "./BIOMDxyz.xml",
     "filename2": "./glycolysis.sbgn",
