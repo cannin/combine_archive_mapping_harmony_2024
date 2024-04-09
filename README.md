@@ -7,6 +7,8 @@ Notes from the HARMONY 2024 Breakout Session on Mapping SBGN and SBML Files
 * example_omex: OMEX specification and example from: https://figshare.com/articles/dataset/COMBINE_Archive_Show_Case/3427271 (.omex is a .zip file)
 * glycolysis: Representations of the glycolysis pathway from BioModels SBML, SBML Antimony conversion, SBGNML SBGN website, SBML Render auto-layout PNG, SBGN PNG, demo mapping using ChatGPT 4 (https://chat.openai.com/share/172b33c7-50bb-43e3-b705-e76eadf867ed)
 * repressilator: Representations of the repressilator pathway from BioModels SBML, SBML Antimony conversion, SBGNML SBGN website (with and without manually added annotations), demo mapping using ChatGPT 4
+    * https://chat.openai.com/share/2bdea3e9-d262-41f7-8ec7-36248ab5d767 (v1)
+    * https://chat.openai.com/share/d10b43bc-2d3d-4c78-a8ca-10a185b6c771 (v2)
 
 # Session Notes 
 ## Use Cases
