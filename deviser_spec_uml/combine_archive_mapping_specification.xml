@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="mapping_relationships" fullname="Mapping Relationships" version="1" required="false">
+  <versions>
+    <pkgVersion level="3" version="1" pkg_version="1">
+      <elements>
+        <element name="FileMapping" typeCode="SBML_MAPPING_RELATIONSHIPS_FILEMAPPING" hasListOf="false" hasChildren="false" hasMath="false" childrenOverwriteElementName="false" abstract="false">
+          <attributes>
+            <attribute name="filename1" required="true" type="string" element=" " abstract="false"/>
+            <attribute name="filename2" required="true" type="string" abstract="false"/>
+            <attribute name="notes" required="false" type="element" element="XMLNode*" abstract="false"/>
+            <attribute name="annotation" required="false" type="element" element="XMLNode*" abstract="false"/>
+            <attribute name="mapping" required="false" type="lo_element" element="Mapping" abstract="false"/>
+          </attributes>
+        </element>
+        <element name="Mapping" typeCode="SBML_MAPPING_RELATIONSHIPS_MAPPING" hasListOf="true" hasChildren="false" hasMath="false" childrenOverwriteElementName="false" minNumListOfChildren="0" maxNumListOfChildren="0" abstract="false">
+          <attributes>
+            <attribute name="format1_id" required="false" type="IDREF" abstract="false"/>
+            <attribute name="format1_xpath" required="false" type="string" abstract="false"/>
+            <attribute name="format1_name" required="false" type="string" abstract="false"/>
+            <attribute name="format2_id" required="false" type="IDREF" abstract="false"/>
+            <attribute name="format2_xpath" required="false" type="string" abstract="false"/>
+            <attribute name="format2_name" required="false" type="string" abstract="false"/>
+          </attributes>
+        </element>
+      </elements>
+    </pkgVersion>
+  </versions>
+</package>

@@ -1,0 +1,58 @@
+{
+    "mapping": [
+        {
+            "sbml": "PX",
+            "sbgn": "glyph8",
+            "sbml_name": "LacI protein",
+            "sbgn_label": "Laclp"
+        },
+        {
+            "sbml": "PY",
+            "sbgn": "glyph24",
+            "sbml_name": "TetR protein",
+            "sbgn_label": "Tetp"
+        },
+        {
+            "sbml": "PZ",
+            "sbgn": "glyph27",
+            "sbml_name": "cI protein",
+            "sbgn_label": "Clp"
+        },
+        {
+            "sbml": "X",
+            "sbgn": "glyph20",
+            "sbml_name": "LacI mRNA",
+            "sbgn_label": "Laclm"
+        },
+        {
+            "sbml": "X",
+            "sbgn": "glyph20a",
+            "sbml_name": "LacI mRNA",
+            "sbgn_label": "ct:mRNA"
+        },
+        {
+            "sbml": "Y",
+            "sbgn": "glyph1",
+            "sbml_name": "TetR mRNA",
+            "sbgn_label": "Tetm"
+        },
+        {
+            "sbml": "Y",
+            "sbgn": "glyph1a",
+            "sbml_name": "TetR mRNA",
+            "sbgn_label": "ct:mRNA"
+        },
+        {
+            "sbml": "Z",
+            "sbgn": "glyph21",
+            "sbml_name": "cI mRNA",
+            "sbgn_label": "Clm"
+        },
+        {
+            "sbml": "Z",
+            "sbgn": "glyph21a",
+            "sbml_name": "cI mRNA",
+            "sbgn_label": "ct:mRNA"
+        }
+    ]
+}

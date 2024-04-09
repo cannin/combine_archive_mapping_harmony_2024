@@ -1,0 +1,105 @@
+import antimony
+
+# https://tellurium.readthedocs.io/en/latest/antimony.html#annotation-keywords
+sb='''
+// Created by libAntimony v2.8.0
+model *BIOMD0000000012()
+
+  // Compartments and Species:
+  compartment cell;
+  substanceOnly species PX in cell, PY in cell, PZ in cell, X in cell, Y in cell;
+  substanceOnly species Z in cell;
+
+  // Assignment Rules:
+  beta := tau_mRNA/tau_prot;
+  alpha0 := (a0_tr*eff*tau_prot)/(ln(2)*KM);
+  a0_tr := ps_0*60;
+  alpha := (a_tr*eff*tau_prot)/(ln(2)*KM);
+  a_tr := (ps_a - ps_0)*60;
+  t_ave := tau_mRNA/ln(2);
+  kd_mRNA := ln(2)/tau_mRNA;
+  kd_prot := ln(2)/tau_prot;
+  k_tl := eff/t_ave;
+
+  // Reactions:
+  Reaction1: X => ; kd_mRNA*X;
+  Reaction2: Y => ; kd_mRNA*Y;
+  Reaction3: Z => ; kd_mRNA*Z;
+  Reaction4:  => PX; k_tl*X;
+  Reaction5:  => PY; k_tl*Y;
+  Reaction6:  => PZ; k_tl*Z;
+  Reaction7: PX => ; kd_prot*PX;
+  Reaction8: PY => ; kd_prot*PY;
+  Reaction9: PZ => ; kd_prot*PZ;
+  Reaction10:  => X; a0_tr + (a_tr*KM^n)/(KM^n + PZ^n);
+  Reaction11:  => Y; a0_tr + (a_tr*KM^n)/(KM^n + PX^n);
+  Reaction12:  => Z; a0_tr + (a_tr*KM^n)/(KM^n + PY^n);
+
+  // Species initializations:
+  PX = 0;
+  PY = 0;
+  PZ = 0;
+  X = 0;
+  Y = 20/cell;
+  Z = 0;
+
+  // Compartment initializations:
+  cell = 1;
+
+  // Variable initializations:
+  tau_mRNA = 2;
+  tau_prot = 10;
+  eff = 20;
+  KM = 40;
+  n = 2;
+  ps_a = 0.5;
+  ps_0 = 0.0005;
+
+  // Other declarations:
+  var beta, alpha0, a0_tr, alpha, a_tr, t_ave, kd_mRNA, kd_prot, k_tl;
+  const cell, tau_mRNA, tau_prot, eff, KM, n, ps_a, ps_0;
+
+  // Unit definitions:
+  unit volume = 1e-15 litre;
+  unit substance = item;
+  unit time_unit = 60 second;
+
+  // Display Names:
+  volume is "cubic microns";
+  substance is "item";
+  time_unit is "minute";
+  PX is "LacI protein";
+  PY is "TetR protein";
+  PZ is "cI protein";
+  X is "LacI mRNA";
+  Y is "TetR mRNA";
+  Z is "cI mRNA";
+  tau_mRNA is "mRNA half life";
+  tau_prot is "protein half life";
+  eff is "translation efficiency";
+  t_ave is "average mRNA life time";
+  ps_a is "tps_active";
+  ps_0 is "tps_repr";
+  Reaction1 is "degradation of LacI transcripts";
+  Reaction2 is "degradation of TetR transcripts";
+  Reaction3 is "degradation of CI transcripts";
+  Reaction4 is "translation of LacI";
+  Reaction5 is "translation of TetR";
+  Reaction6 is "translation of CI";
+  Reaction7 is "degradation of LacI";
+  Reaction8 is "degradation of TetR";
+  Reaction9 is "degradation of CI";
+  Reaction10 is "transcription of LacI";
+  Reaction11 is "transcription of TetR";
+  Reaction12 is "transcription of CI";
+
+  // CV terms:
+  PX identity "https://identifiers.org/GO:FIXME"
+  PY identity "http://identifiers.org/CHEBI:FIXME"
+end
+'''
+
+antimony.loadAntimonyString(sb)
+
+sbml = antimony.getSBMLString('BIOMD0000000012')
+print(sbml)
