@@ -89,3 +89,4 @@ Note: using XPATH is biologically relevant and expressive, as we may map a singl
 ```
 
 # UML Diagram
+![COMBINE Mapping Specification UML](deviser_spec_uml/combine_archive_mapping_specification.png)
