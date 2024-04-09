@@ -38,13 +38,13 @@ Comment: Mapping may be tedious and require manual curation; can AI (i.e., ChatG
 * Map objects across several files
 * Generate Python code to perform these operations
 
-# Useful Information Links
+## Useful Information Links
 * MINERVA (e.g. Asthma Maps) creates SBGN-ML and SBML files that use Layout and Render extensions to preserve the graphical representation of diagrams
 * Linking to parts within file (e.g. CellML, SBML comp) - XPointer: https://www.w3.org/TR/WD-xptr 
 * New OMEX Metadata Format: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8665746/ 
 https://github.com/sbmlteam/deviser to define new libSBML extension
 
-# Example Mapping Schema using JSON
+## Example Mapping Schema using JSON
 NOTE: filetypes are defined in the manifest. JSON used for demo purposes only
 ```
 {
@@ -77,10 +77,13 @@ NOTE: filetypes are defined in the manifest. JSON used for demo purposes only
 ]}
 ```
 
-# Rationale for XPath
+## Rationale for XPath
 Note: using XPATH is biologically relevant and expressive, as we may map a single SBML entity to several elements in SBGN and vice versa, mapping SBML to SBGN AF (multiple SBML elements mapped into a single activity node). . However, validation of code may be difficult.
 
-# UML String (for yUML.me Site)
+# UML Diagram
+![COMBINE Mapping Specification UML](deviser_spec_uml/combine_archive_mapping_specification_simple.png)
+
+## UML String (for yUML.me Site)
 ```
 [FileMapping|filename1 : string;filename2 : string;notes : XMLNode* use=“optional”;annotation : XMLNode* use=“optional”;mapping : ListOfMappings use=“optional”{bg:linen}]
 [XMLNode*]<notes-[FileMapping]
@@ -89,6 +92,3 @@ Note: using XPATH is biologically relevant and expressive, as we may map a singl
 [Mapping|format1_id : IDREF use=“optional”;format1_xpath : string use=“optional”;format1_name : string use=“optional”;format2_id : IDREF use=“optional”;format2_xpath : string use=“optional”;format2_name : string use=“optional”{bg:linen}]
 [Mapping]-mapping  1..*>[FileMapping]
 ```
-
-# UML Diagram
-![COMBINE Mapping Specification UML](deviser_spec_uml/combine_archive_mapping_specification_simple.png)
